@@ -16,18 +16,18 @@ const GameMenuContext: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  // Quit Game button handler
+  // Oyundan çıkış butonu işleyicisi
   const quitGameHandler = () => {
     navigate('/');
     dispatch(setModal({ modal: 'gameMenu', status: false }));
     dispatch(quitGame());
   };
-  // Continue button handler
+  // Devam butonu işleyicisi
   const continueHandler = () => {
     dispatch(toggleModal('gameMenu'));
     dispatch(continueGame());
   };
-  // restart button handler
+  // Yeniden başlat butonu işleyicisi
   const restartHandler = () => {
     dispatch(toggleModal('gameMenu'));
     dispatch(restartGame());
@@ -35,16 +35,16 @@ const GameMenuContext: React.FC = () => {
 
   return (
     <GameMenuCtxWrapper>
-      <GameMenuHeader>pause</GameMenuHeader>
+      <GameMenuHeader>duraklat</GameMenuHeader>
       <GameMenuButtonsWrapper>
         <MenuButton bgColor="white" textcolor="black" onClick={continueHandler}>
-          <GameMenuBtnText>continue game</GameMenuBtnText>
+          <GameMenuBtnText>devam et</GameMenuBtnText>
         </MenuButton>
         <MenuButton bgColor="white" textcolor="black" onClick={restartHandler}>
-          <GameMenuBtnText>restart</GameMenuBtnText>
+          <GameMenuBtnText>yeniden başlat</GameMenuBtnText>
         </MenuButton>
         <MenuButton bgColor="red" textcolor="white" onClick={quitGameHandler}>
-          <GameMenuBtnText>quit game</GameMenuBtnText>
+          <GameMenuBtnText>oyundan çık</GameMenuBtnText>
         </MenuButton>
       </GameMenuButtonsWrapper>
     </GameMenuCtxWrapper>

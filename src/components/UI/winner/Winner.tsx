@@ -11,17 +11,17 @@ const Winner: React.FC = () => {
   const dispatch = useAppDispatch();
   const game = useSelector((state: RootState) => state.game);
 
-  // if it is tie we render no name and status tie
-  // it there is a winner we render correct player name and status wins
+  // Beraberlik durumunda isim gösterilmez ve durum 'beraberlik' olur
+  // Kazanan varsa, doğru oyuncu adı ve kazanan durumu gösterilir
   let name = '';
-  let status = 'tie';
+  let status = 'beraberlik';
   if (game.winner && game.winner !== 'tie') {
     name = game[game.winner].name;
-    // check for gramma
-    status = name === 'You' ? 'win' : 'wins';
+    // Gramer kontrolü
+    status = name === 'Sen' ? 'kazandın' : 'kazandı';
   }
 
-  // Play again button handler
+  // Tekrar oyna butonu işleyicisi
   const playAgainHandler = () => {
     dispatch(playAgain());
   };
@@ -30,7 +30,7 @@ const Winner: React.FC = () => {
     <WinneroWrapper data-testid="winner">
       <WinnerName data-testid="winner-name">{name}</WinnerName>
       <WinnerText data-testid="game-status">{status}</WinnerText>
-      <SmallButton onClick={playAgainHandler}>Play Again</SmallButton>
+      <SmallButton onClick={playAgainHandler}>Tekrar Oyna</SmallButton>
     </WinneroWrapper>
   );
 };

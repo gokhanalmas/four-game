@@ -65,8 +65,8 @@ const gameSlice = createSlice({
   reducers: {
     startGame(state, action: PayloadAction<string>) {
       state.gameMode = action.payload;
-      state.p1.name = action.payload === 'PvP' ? 'Player 1' : 'You';
-      state.p2.name = action.payload === 'PvP' ? 'Player 2' : 'CPU';
+      state.p1.name = action.payload === 'PvP' ? 'Oyuncu 1' : 'You';
+      state.p2.name = action.payload === 'PvP' ? 'Oyuncu 2' : 'CPU';
       state.currentPlayer = state.p1.color === state.turn ? 'p1' : 'p2';
       state.gameIsRunning = true;
     },

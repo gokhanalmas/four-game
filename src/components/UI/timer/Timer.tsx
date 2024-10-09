@@ -37,10 +37,10 @@ const Timer: React.FC = () => {
 
   const player =
     game[currentPlayer].name === 'You'
-      ? 'your'
-      : `${game[currentPlayer].name}'s`;
+      ? 'senin'
+      : `${game[currentPlayer].name}'nin`;
 
-  // keep tracking of current timer, not the best one but for 30s interval is enough
+  // Mevcut süreyi takip et, 30 saniyelik aralık için yeterli
   useEffect(() => {
     if (isGamePaused) return;
     const timeout = setTimeout(function () {
@@ -62,8 +62,8 @@ const Timer: React.FC = () => {
       textcolor={textColor[turn]}
       data-testid="timer"
     >
-      <PlayerName>{player} turn</PlayerName>
-      <Time>{timer}s</Time>
+      <PlayerName>{player} sırası</PlayerName>
+      <Time>{timer}sn</Time>
     </TimerWrapper>
   );
 };

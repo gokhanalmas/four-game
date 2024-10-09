@@ -39,13 +39,13 @@ const MainMenuContext: React.FC = () => {
       <ButtonsWrapper>
         <MenuButton bgColor="red" textcolor="white" onClick={CPUvPHandler}>
           <ButtonCtxWrapper>
-            <BtnText>player vs cpu</BtnText>
+            <BtnText>Oyuncu vs AI</BtnText>
             <CPUMode />
           </ButtonCtxWrapper>
         </MenuButton>
         <MenuButton bgColor="yellow" textcolor="black" onClick={PvPhandler}>
           <ButtonCtxWrapper>
-            <BtnText>play vs player</BtnText>
+            <BtnText>Oyuncu vs Oyuncu</BtnText>
             <PVPMode />
           </ButtonCtxWrapper>
         </MenuButton>
@@ -54,7 +54,7 @@ const MainMenuContext: React.FC = () => {
           textcolor="black"
           onClick={gameRulesHandler}
         >
-          <BtnText>game rules</BtnText>
+          <BtnText>Oyun Kuralları</BtnText>
         </MenuButton>
       </ButtonsWrapper>
     </MenuCtxWrapper>

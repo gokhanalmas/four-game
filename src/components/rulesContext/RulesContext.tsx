@@ -15,46 +15,47 @@ import { useNavigate } from 'react-router-dom';
 const RulesContext: React.FC = () => {
   const navigate = useNavigate();
 
-  // Return button handler
+  // Geri dön butonu işleyicisi
   const clickHandler = () => {
     navigate('/');
   };
 
   return (
     <RulesCtxWrapper>
-      <RulesHeader>Rules</RulesHeader>
+      <RulesHeader>Kurallar</RulesHeader>
       <RulesTextWrapper>
         <div>
-          <RulesSubHeader>objective</RulesSubHeader>
+          <RulesSubHeader>amaç</RulesSubHeader>
           <p>
-            Be the first player to connect 4 of the same colored discs in a row
-            (either vertically, horizontally, or diagonally).
+            Aynı renkteki 4 diski üst üste (dikey, yatay veya çapraz olarak)
+            bağlayan ilk oyuncu olun.
           </p>
         </div>
         <div>
-          <RulesSubHeader>how to play</RulesSubHeader>
+          <RulesSubHeader>nasıl oynanır</RulesSubHeader>
 
           <RulesItem>
             <h4>1</h4>
-            <span>Red goes first in the first game.</span>
+            <span>İlk oyunda kırmızı önce başlar.</span>
           </RulesItem>
           <RulesItem>
             <h4>2</h4>
             <span>
-              Players must alternate turns, and only one disc can be dropped in
-              each turn.
+              Oyuncular sıralı olarak oynar ve her turda sadece bir disk
+              bırakılabilir.
             </span>
           </RulesItem>
           <RulesItem>
             <h4>3</h4>
             <span>
-              The game ends when there is a 4-in-a-row or a stalemate.
+              Oyun, 4'lü bir sıra oluştuğunda veya beraberlikle sona erer.
             </span>
           </RulesItem>
           <RulesItem>
             <h4>4</h4>
             <span>
-              The starter of the previous game goes second on the next game.
+              Önceki oyunun başlangıç oyuncusu, bir sonraki oyunda ikinci olarak
+              oynar.
             </span>
           </RulesItem>
         </div>

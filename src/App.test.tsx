@@ -19,8 +19,8 @@ jest.mock('../src/helpers/getWorker.ts', () => ({
   getWebWorker: jest.fn(),
 }));
 
-describe('app componnet testing', () => {
-  test('should render main menu modal if it is opened', async () => {
+describe('uygulama bileşeni testi', () => {
+  test('ana menü modali açık ise render edilmelidir', async () => {
     renderComponent();
 
     act(() => {
@@ -28,21 +28,22 @@ describe('app componnet testing', () => {
     });
     let modal;
     await waitFor(() => {
-      modal = screen.getByText('Select difficulty');
+      modal = screen.getByText('Zorluk Seçin');
     });
     expect(modal).toBeInTheDocument();
     act(() => {
       store.dispatch(setModal({ modal: 'mainMenu', status: false }));
     });
   });
-  test('should render game menu modal if it is opened', async () => {
+  
+  test('oyun menü modali açık ise render edilmelidir', async () => {
     renderComponent();
     act(() => {
       store.dispatch(setModal({ modal: 'gameMenu', status: true }));
     });
     let modal;
     await waitFor(() => {
-      modal = screen.getByText('pause');
+      modal = screen.getByText('duraklat');
     });
     expect(modal).toBeInTheDocument();
     act(() => {

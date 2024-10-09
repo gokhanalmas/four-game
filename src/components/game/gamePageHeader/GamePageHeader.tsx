@@ -31,12 +31,12 @@ const GamePageHeader: React.FC = () => {
     >
       <div>
         <SmallButton isMenu={true} onClick={menuHandler}>
-          Menu
+          Menü
         </SmallButton>
       </div>
       <Logo />
       <div>
-        <SmallButton onClick={restartHandler}>Restart</SmallButton>
+        <SmallButton onClick={restartHandler}>Tekrar</SmallButton>
       </div>
     </Header>
   );
